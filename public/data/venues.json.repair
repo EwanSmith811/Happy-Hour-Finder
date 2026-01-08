@@ -1,0 +1,334 @@
+[
+  {
+    "id": "user-1767901863466-3352",
+    "name": "Union Bear Brewing Co",
+    "address": "5880 State Hwy 121 #101, Plano, TX",
+    "days": [],
+    "happyHours": [
+      {
+        "days": [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri"
+        ],
+        "startTime": "15:00",
+        "endTime": "18:00",
+        "deals": [
+          "$4 Drafts"
+        ]
+      }
+    ],
+    "lat": 33.0900944,
+    "lng": -96.8213722,
+    "distanceMiles": 3.6,
+    "type": "brewery",
+    "weeklySchedule": {
+      "Mon": {
+        "mode": "inherit"
+      },
+      "Tue": {
+        "mode": "inherit"
+      },
+      "Wed": {
+        "mode": "inherit"
+      },
+      "Thu": {
+        "mode": "inherit"
+      },
+      "Fri": {
+        "mode": "inherit"
+      },
+      "Sat": {
+        "mode": "inherit"
+      },
+      "Sun": {
+        "mode": "inherit"
+      }
+    },
+    "selectedDays": {
+      "Mon": true,
+      "Tue": true,
+      "Wed": true,
+      "Thu": true,
+      "Fri": true,
+      "Sat": false,
+      "Sun": false
+    },
+    "master": {
+      "start": "15:00",
+      "end": "18:00",
+      "deals": [
+        {
+          "id": "deal-4i3iwyw",
+          "category": "Beer",
+          "description": "$4 Drafts"
+        }
+      ]
+    }
+  },
+  {
+    "id": "user-1767901747569-4376",
+    "name": "Ida Claire",
+    "address": "5001 Belt Line Rd, Dallas, TX 75254, USA",
+    "website": "http://ida-claire.com/",
+    "lat": 32.954446499999996,
+    "lng": -96.82582699999999,
+    "type": "restaurant",
+    "happyHours": [
+      {
+        "days": [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri"
+        ],
+        "startTime": "15:00",
+        "endTime": "18:00"
+      }
+    ],
+    "weeklySchedule": {
+      "Mon": {
+        "mode": "inherit"
+      },
+      "Tue": {
+        "mode": "inherit"
+      },
+      "Wed": {
+        "mode": "inherit"
+      },
+      "Thu": {
+        "mode": "inherit"
+      },
+      "Fri": {
+        "mode": "inherit"
+      },
+      "Sat": {
+        "mode": "inherit"
+      },
+      "Sun": {
+        "mode": "inherit"
+      }
+    },
+    "selectedDays": {
+      "Mon": true,
+      "Tue": true,
+      "Wed": true,
+      "Thu": true,
+      "Fri": true,
+      "Sat": false,
+      "Sun": false
+    },
+    "master": {
+      "start": "15:00",
+      "end": "18:00",
+      "deals": []
+    }
+  },
+  {
+    "id": "user-1767900441510-6449",
+    "name": "Armor Brewing Co",
+    "address": "9 Prestige Cir, Allen",
+    "days": [],
+    "happyHours": [
+      {
+        "days": [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu"
+        ],
+        "startTime": "15:00",
+        "endTime": "18:00"
+      }
+    ],
+    "lat": 33.0929056,
+    "lng": -96.6728752,
+    "distanceMiles": 5.1,
+    "type": "brewery"
+  },
+  {
+    "id": "user-1767900239620-1603",
+    "name": "Holy Grail Pub",
+    "address": "8240 Preston Rd #150, Plano, TX",
+    "days": [],
+    "happyHours": [
+      {
+        "days": [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun"
+        ],
+        "startTime": "15:00",
+        "endTime": "18:00",
+        "deals": [
+          "$4 Select Drafts",
+          "$5 Select Shared Plates",
+          "$4 Well Drinks",
+          "$5 House Wine"
+        ]
+      }
+    ],
+    "lat": 33.0899112,
+    "lng": -96.80476949999999,
+    "distanceMiles": 2.6,
+    "type": "brewery",
+    "weeklySchedule": {
+      "Mon": {
+        "mode": "inherit"
+      },
+      "Tue": {
+        "mode": "inherit"
+      },
+      "Wed": {
+        "mode": "inherit"
+      },
+      "Thu": {
+        "mode": "inherit"
+      },
+      "Fri": {
+        "mode": "inherit"
+      },
+      "Sat": {
+        "mode": "inherit"
+      },
+      "Sun": {
+        "mode": "inherit"
+      }
+    },
+    "selectedDays": {
+      "Mon": true,
+      "Tue": true,
+      "Wed": true,
+      "Thu": true,
+      "Fri": true,
+      "Sat": true,
+      "Sun": true
+    },
+    "master": {
+      "start": "15:00",
+      "end": "18:00",
+      "deals": [
+        {
+          "id": "deal-k85kcvn",
+          "category": "Beer",
+          "description": "$4 Select Drafts"
+        },
+        {
+          "id": "deal-7heut8m",
+          "category": "Beer",
+          "description": "$5 Select Shared Plates"
+        },
+        {
+          "id": "deal-olhdfi1",
+          "category": "Beer",
+          "description": "$4 Well Drinks"
+        },
+        {
+          "id": "deal-hpgqcag",
+          "category": "Beer",
+          "description": "$5 House Wine"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ChIJLcqoZqU8TIYRsjNJbQkm0yw",
+    "name": "Legacy Hall",
+    "address": "7800 Windrose Ave., Plano, TX 75024, USA",
+    "lat": 33.08319290000001,
+    "lng": -96.825834,
+    "website": "http://legacyfoodhall.com/",
+    "rating": 4.6,
+    "userRatingsTotal": 10602,
+    "type": "restaurant",
+    "happyHours": [
+      {
+        "days": [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri"
+        ],
+        "startTime": "15:00",
+        "endTime": "18:00",
+        "deals": []
+      }
+    ]
+  },
+  {
+    "id": "ChIJ39x4mBA7TIYR5sD3qOPAa94",
+    "name": "Truck Yard",
+    "address": "5959 Grove Ln Ste B, The Colony, TX 75056, USA",
+    "lat": 33.0695489,
+    "lng": -96.8575353,
+    "website": "https://truckyard.com/the-colony/",
+    "rating": 4.6,
+    "userRatingsTotal": 4043,
+    "type": "bar",
+    "happyHours": [
+      {
+        "days": [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu"
+        ],
+        "startTime": "00:00",
+        "endTime": "19:00",
+        "deals": [
+          "discounted cocktails",
+          "ice-cold drafts"
+        ]
+      },
+      {
+        "days": [
+          "Sun"
+        ],
+        "startTime": "18:00",
+        "endTime": "21:00",
+        "deals": [
+          "discounted cocktails",
+          "ice-cold drafts"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ChIJocBO-_chTIYRdEmaplxUZFQ",
+    "name": "Sidecar Social Addison",
+    "address": "5100 Belt Line Rd, Addison, TX 75254, USA",
+    "lat": 32.950981,
+    "lng": -96.8190583,
+    "website": "https://sidecarsocial.com/?utm_source=extnet&utm_medium=yext",
+    "rating": 4.3,
+    "userRatingsTotal": 3510,
+    "type": "bar",
+    "happyHours": [
+      {
+        "days": [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri"
+        ],
+        "startTime": "16:00",
+        "endTime": "19:00",
+        "deals": [
+          "$2 off Wine by the glass",
+          "$2 off any Draft Beer (small or tall)",
+          "$2 off Crafted Cocktails",
+          "$2 off select Shareables"
+        ]
+      }
+    ]
+  }
+]

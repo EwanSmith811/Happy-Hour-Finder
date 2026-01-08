@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-obsidian text-white font-sans;
+}
+
+/* Light theme overrides when html has .light */
+.light body {
+  @apply bg-white text-black;
+}
+
+.light .glass {
+  @apply bg-white/5 backdrop-blur-xl border-[1px] border-black/10;
+}
+
+.light .ghost-button {
+  @apply bg-black/[0.03] text-black border-black/10 hover:bg-black/[0.06];
+}
+
+/* Broad light-mode overrides to ensure most UI elements appear light */
+.light body {
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+
+.light .bg-obsidian {
+  background: #ffffff !important;
+}
+
+.light .glass {
+  background: rgba(255,255,255,0.9) !important;
+  color: #0f172a !important;
+  border-color: rgba(0,0,0,0.12) !important;
+}
+
+.light .ghost-button {
+  background: rgba(0,0,0,0.04) !important;
+  color: #0f172a !important;
+  border-color: rgba(0,0,0,0.18) !important;
+}
+
+.light .text-white { color: #0f172a !important; }
+.light .text-gray-400, .light .text-gray-300, .light .text-gray-500, .light .text-gray-200 { color: #475569 !important; }
+
+.light .bg-amber-metallic { filter: none !important; }
+.light .text-amber-100 { color: #92400e !important; }
+
+/* Make modal header/footer light and ensure borders are visible in light mode */
+.light [role="dialog"] > .shrink-0:first-child {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border-bottom-color: rgba(0,0,0,0.12) !important;
+}
+.light [role="dialog"] > .shrink-0:last-child {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border-top-color: rgba(0,0,0,0.12) !important;
+}
+
+/* Darken any element that has a border in light mode for better contrast */
+.light .border {
+  border-color: rgba(0,0,0,0.18) !important;
+}
+
+/* Make active status text darker in light mode for readability */
+.light .text-emerald-200 { color: #065f46 !important; }
+
+/* Slightly darker dialog borders in light mode */
+.light [role="dialog"] { border-color: rgba(0,0,0,0.12) !important; }
+
+/* Light-mode range slider: dark track, visible thumb */
+.light input[type="range"] {
+  background: rgba(0,0,0,0.04) !important;
+}
+.light input[type="range"]::-webkit-slider-runnable-track {
+  background: rgba(0,0,0,0.04) !important;
+}
+.light input[type="range"]::-webkit-slider-thumb {
+  background: #fff !important;
+  border: 2px solid rgba(0,0,0,0.12) !important;
+}
+.light input[type="range"]::-moz-range-track {
+  background: rgba(0,0,0,0.04) !important;
+}
+.light input[type="range"]::-moz-range-thumb {
+  background: #fff !important;
+  border: 2px solid rgba(0,0,0,0.12) !important;
+}
+
+/* Title glow (dark mode only) */
+.title-glow {
+  text-shadow: 0 0 18px rgba(250,204,21,0.9), 0 4px 12px rgba(212,175,55,0.15);
+}
+.light .title-glow {
+  text-shadow: none !important;
+}
+
+/* In light mode, make closing soon text darker */
+.light .text-red-100 { color: #7f1d1d !important; }
+
+/* Modal light-mode overrides */
+.light [role="dialog"] {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border-color: rgba(0,0,0,0.06) !important;
+}
+
+/* Backdrop overlay (dark in dark mode, light in light mode) */
+.light .bg-black\/60 {
+  background: rgba(255,255,255,0.75) !important;
+}
+
+/* Glassmorphism base */
+.glass {
+  @apply bg-white/5 backdrop-blur-xl border-[1px] border-white/10;
+}
+
+/* Ghost button base */
+.ghost-button {
+  @apply px-6 py-3 rounded-lg font-medium border border-white/30 bg-white/[0.03] text-white transition-all duration-300 hover:border-amber-metallic/60 hover:bg-white/[0.08] hover:animate-button-glow;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.5);
+}

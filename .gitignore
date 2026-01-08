@@ -1,0 +1,11 @@
+﻿.env.local
+.vscode/
+venv/
+venv/
+node_modules/
+.next/
+*.log
+*.pyc
+__pycache__/
+public/data/scrape-progress.json
+public/data/api-budget.json

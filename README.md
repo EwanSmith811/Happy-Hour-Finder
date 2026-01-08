@@ -1,13 +1,6 @@
-# Happy Hour Finder (Vibecode Edition)
+# Happy Hour Finder
 
 Find brewery and restaurant happy hours near you. Fast. No login. No data collection.
-
-## 🎯 The Vibe
-
-- **3-Tap Rule**: Find a drink in 3 taps or less
-- **Dark & Tactile**: Deep obsidian background with glassmorphism cards
-- **Stateless**: Uses URL search params, no database needed
-- **Fast**: Instant results with custom Google Maps integration
 
 ## 🚀 Quick Start
 

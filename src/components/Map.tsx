@@ -173,6 +173,10 @@ export function Map({ venues, center = { lat: 37.7749, lng: -122.4194 } }: MapPr
     if (process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) {
       initMap();
     }
+    // If key missing, log and leave the blank container so we can show a message
+    else {
+      console.error('Missing NEXT_PUBLIC_GOOGLE_MAPS_API_KEY — map will not load');
+    }
 
     return () => {
       // Cleanup markers
@@ -191,4 +195,16 @@ export function Map({ venues, center = { lat: 37.7749, lng: -122.4194 } }: MapPr
   }, [venues, center]);
 
   return <div ref={mapRef} className="w-full h-full rounded-lg overflow-hidden" />;
+}
+
+export function MapFallbackMissingKey() {
+  return (
+    <div className="w-full h-full rounded-lg overflow-hidden flex items-center justify-center bg-black/60 text-white p-4">
+      <div className="text-center">
+        <div className="font-semibold mb-2">Map unavailable</div>
+        <div className="text-sm text-gray-300">Missing `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` in this environment.</div>
+        <div className="text-xs text-gray-400 mt-2">Set the env var and redeploy to enable the map.</div>
+      </div>
+    </div>
+  );
 }

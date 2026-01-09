@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { SearchHeader } from "@/components/SearchHeader";
 import { VenueList } from "@/components/VenueList";
-import { Map } from "@/components/Map";
+import { Map, MapFallbackMissingKey } from "@/components/Map";
 import { Venue } from "@/types";
 import { calculateDistance, getHHStatus } from "@/lib/utils";
 import { getCoordinatesFromZip } from "@/lib/googlePlaces";
@@ -26,6 +26,7 @@ export default function HomeClient() {
   const [currentZip, setCurrentZip] = useState("75025");
   const [currentRadius, setCurrentRadius] = useState(3);
   const [userCoords, setUserCoords] = useState<{ lat: number; lng: number } | null>(null);
+  const hasMapsKey = Boolean(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY);
 
   // Load venues data on mount
   useEffect(() => {
@@ -367,7 +368,11 @@ export default function HomeClient() {
                 transition={{ duration: 0.3 }}
                 className="h-96 md:h-[600px] rounded-lg overflow-hidden glass"
               >
-                <Map venues={filteredVenues} center={{ lat: userCoords.lat, lng: userCoords.lng }} />
+                {hasMapsKey ? (
+                  <Map venues={filteredVenues} center={{ lat: userCoords.lat, lng: userCoords.lng }} />
+                ) : (
+                  <MapFallbackMissingKey />
+                )}
               </motion.div>
             )}
           </motion.div>

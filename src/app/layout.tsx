@@ -30,6 +30,17 @@ export default function RootLayout({
         <meta name="viewport" content={viewport} />
         <link rel="icon" href="/beer.png" type="image/png" />
         <link rel="apple-touch-icon" href="/beer.png" />
+        {/* Ensure dark mode is applied before React hydrates to avoid flash */}
+        <script dangerouslySetInnerHTML={{ __html: `(() => {
+          try {
+            const t = window.localStorage.getItem('hh_theme');
+            if (t === 'light') {
+              document.documentElement.classList.add('light');
+            } else {
+              document.documentElement.classList.remove('light');
+            }
+          } catch (e) {}
+        })();` }} />
       </head>
       <body className="bg-obsidian text-white antialiased" suppressHydrationWarning>
         {children}

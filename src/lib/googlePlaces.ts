@@ -48,10 +48,27 @@ export async function getCoordinatesFromZip(zipcode: string): Promise<{
   lng: number;
 } | null> {
   try {
+    // If running in the browser, call the server-side proxy to keep the key secret
+    if (typeof window !== "undefined") {
+      try {
+        const resp = await fetch(`/api/geocode?zip=${encodeURIComponent(zipcode)}`);
+        if (!resp.ok) {
+          console.error(`Client geocode proxy error: ${resp.status}`);
+          return null;
+        }
+        const j = await resp.json();
+        if (j && typeof j.lat === "number" && typeof j.lng === "number") return { lat: j.lat, lng: j.lng };
+        return null;
+      } catch (e) {
+        console.error("Client geocode call failed", e);
+        return null;
+      }
+    }
+
+    // Server-side: call Google directly using server-only key
     // Format zipcode with country code for better accuracy
     const formattedAddress = `${zipcode}, USA`;
     const encodedAddress = encodeURIComponent(formattedAddress);
-    
     const geoApiKey = process.env.GOOGLE_MAPS_API_KEY || process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
     if (!geoApiKey) {
       console.error("Missing GOOGLE_MAPS_API_KEY/NEXT_PUBLIC_GOOGLE_MAPS_API_KEY for geocoding");
@@ -60,7 +77,7 @@ export async function getCoordinatesFromZip(zipcode: string): Promise<{
 
     // Use retrying fetch to avoid transient network/connect timeouts
     const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}&key=${geoApiKey}`;
-    const response = await fetchWithRetry(url, { method: 'GET' }, 3, 8000);
+    const response = await fetchWithRetry(url, { method: "GET" }, 3, 8000);
     if (!response) {
       console.error("Geocoding fetch failed after retries");
       return null;

@@ -163,27 +163,34 @@ async function scrapeWithPython(url: string): Promise<HappyHour[]> {
  * Scrape happy hour information using Python ScrapeGraphAI script
  */
 async function scrapeHappyHourData(website: string): Promise<HappyHour[] | null> {
-  try {
-    const serviceUrl = process.env.SCRAPER_SERVICE_URL;
-    if (serviceUrl) {
-      try {
-        const res = await fetch(serviceUrl.replace(/\/$/, "") + "/scrape", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ url: website }),
-        });
-        if (!res.ok) {
-          console.warn(`Scraper service responded ${res.status} for ${website}`);
-          return null;
+    try {
+      // Prefer KOYEB_SERVICE_URL for Koyeb deployment, fall back to SCRAPER_SERVICE_URL
+      const serviceUrl = process.env.KOYEB_SERVICE_URL || process.env.SCRAPER_SERVICE_URL;
+      if (serviceUrl) {
+        try {
+          const endpoint = serviceUrl.replace(/\/$/, "") + "/scrape";
+          const controller = new AbortController();
+          const timeoutMs = 120_000; // 2 minutes
+          const timer = setTimeout(() => controller.abort(), timeoutMs);
+          const res = await fetch(endpoint, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ url: website }),
+            signal: controller.signal,
+          });
+          clearTimeout(timer);
+          if (!res.ok) {
+            console.warn(`Scraper service responded ${res.status} for ${website}`);
+            return null;
+          }
+          const data = await res.json();
+          const hh = data?.happyHours || [];
+          return Array.isArray(hh) && hh.length > 0 ? hh : null;
+        } catch (err) {
+          console.warn("Failed to call external scraper service, falling back to local python", err);
+          // fallthrough to python fallback
         }
-        const data = await res.json();
-        const hh = data?.happyHours || [];
-        return Array.isArray(hh) && hh.length > 0 ? hh : null;
-      } catch (err) {
-        console.warn("Failed to call external scraper service, falling back to local python", err);
-        // fallthrough to python fallback
       }
-    }
 
     const result = await scrapeWithPython(website);
     return result.length > 0 ? result : null;

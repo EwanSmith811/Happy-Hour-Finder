@@ -1,7 +1,7 @@
 [
   {
     "id": "user-1767901863466-3352",
-    "name": "Union Bear Brewing Co",
+    "name": "Union Bear Brewing Co.",
     "address": "5880 State Hwy 121 #101, Plano, TX",
     "days": [],
     "happyHours": [
@@ -239,6 +239,28 @@
     }
   },
   {
+    "id": "ChIJ1bBV6tfTTYYRmalW1cS_Gng",
+    "name": "The Original Roy Hutchins Barbeque",
+    "address": "3000 TX-114, Trophy Club, TX 76262, USA",
+    "lat": 32.986341599999996,
+    "lng": -97.17013949999999,
+    "website": "http://royhutchinsbbq.com/",
+    "rating": 4.8,
+    "userRatingsTotal": 3160,
+    "type": "bar"
+  },
+  {
+    "id": "ChIJuQDvm1CZToYRi-7kkz-6I8U",
+    "name": "Terry Black's Barbecue",
+    "address": "3025 Main St, Dallas, TX 75226, USA",
+    "lat": 32.7848915,
+    "lng": -96.7799081,
+    "website": "https://www.terryblacksbbq.com/",
+    "rating": 4.7,
+    "userRatingsTotal": 11721,
+    "type": "bar"
+  },
+  {
     "id": "ChIJLcqoZqU8TIYRsjNJbQkm0yw",
     "name": "Legacy Hall",
     "address": "7800 Windrose Ave., Plano, TX 75024, USA",
@@ -302,6 +324,70 @@
     ]
   },
   {
+    "id": "ChIJKQO5V9wnTIYRYJnV25wn1dc",
+    "name": "LaPasha Lounge and Grill",
+    "address": "3855 Belt Line Rd, Addison, TX 75001, USA",
+    "lat": 32.9536382,
+    "lng": -96.85059969999999,
+    "website": "http://www.lapashalounge.com/",
+    "rating": 4.5,
+    "userRatingsTotal": 1939,
+    "type": "bar"
+  },
+  {
+    "id": "ChIJn1Wdvq88TIYR8kdQkqIUWTI",
+    "name": "North Italia",
+    "address": "7501 Windrose Ave. Ste D190, Plano, TX 75024, USA",
+    "lat": 33.080753099999995,
+    "lng": -96.82644719999999,
+    "website": "https://www.northitalia.com/locations/plano-tx-legacy-west/",
+    "rating": 4.4,
+    "userRatingsTotal": 3116,
+    "type": "restaurant",
+    "happyHours": [
+      {
+        "days": [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri"
+        ],
+        "startTime": "15:00",
+        "endTime": "18:00",
+        "deals": [
+          "Half Off Bottles Of Wine",
+          "Zero Proof"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ChIJd0GlbLqZToYR5pmP1Wlo39U",
+    "name": "The Henry",
+    "address": "2301 N Akard St Suite 250, Dallas, TX 75201, USA",
+    "lat": 32.7892021,
+    "lng": -96.8055857,
+    "website": "https://www.thehenryrestaurant.com/locations/the-henry-dallas/?utm_source=Google&utm_medium=Organic&utm_campaign=Maps",
+    "rating": 4.4,
+    "userRatingsTotal": 3240,
+    "type": "restaurant",
+    "happyHours": [
+      {
+        "days": [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri"
+        ],
+        "startTime": "16:00",
+        "endTime": "18:00",
+        "deals": []
+      }
+    ]
+  },
+  {
     "id": "ChIJocBO-_chTIYRdEmaplxUZFQ",
     "name": "Sidecar Social Addison",
     "address": "5100 Belt Line Rd, Addison, TX 75254, USA",
@@ -328,6 +414,31 @@
           "$2 off Crafted Cocktails",
           "$2 off select Shareables"
         ]
+      }
+    ]
+  },
+  {
+    "id": "ChIJO3sSB-s8TIYRxr9PozvWZ5Y",
+    "name": "The Cheesecake Factory",
+    "address": "2601 Preston Rd #2219, Frisco, TX 75034, USA",
+    "lat": 33.0988361,
+    "lng": -96.8108501,
+    "website": "https://locations.thecheesecakefactory.com/tx/frisco-39.html?utm_source=Google&utm_medium=Maps&utm_campaign=Google+Places",
+    "rating": 4.1,
+    "userRatingsTotal": 4973,
+    "type": "restaurant",
+    "happyHours": [
+      {
+        "days": [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri"
+        ],
+        "startTime": "16:00",
+        "endTime": "18:00",
+        "deals": []
       }
     ]
   }

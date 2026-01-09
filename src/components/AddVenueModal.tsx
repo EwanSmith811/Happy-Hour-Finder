@@ -4,6 +4,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { X, Trash2, Plus, RotateCcw, ChevronDown, ChevronUp } from "lucide-react";
+import type { HappyHour } from "../types";
 
 type DealCategory = "Beer" | "Wine" | "Cocktails" | "Food";
 type Deal = { id: string; category: DealCategory; description: string };
@@ -33,6 +34,7 @@ interface AddVenueModalProps {
     name?: string;
     address?: string;
     website?: string;
+    happyHours?: HappyHour[];
     weeklySchedule?: Record<DayKey, DaySchedule>;
     selectedDays?: Record<DayKey, boolean>;
     master?: { start?: string; end?: string; deals?: Deal[] };

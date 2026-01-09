@@ -27,7 +27,7 @@ interface AddVenueModalProps {
     weeklySchedule: Record<DayKey, DaySchedule>;
     selectedDays: Record<DayKey, boolean>;
     master: { start: string; end: string; deals: Deal[] };
-  }) => void;
+  }) => Promise<boolean> | boolean;
   // optional initial venue for editing user-provided venues
   initial?: {
     id?: string;
@@ -46,7 +46,7 @@ interface AddVenueModalProps {
     weeklySchedule: Record<DayKey, DaySchedule>;
     selectedDays: Record<DayKey, boolean>;
     master: { start: string; end: string; deals: Deal[] };
-  }) => void;
+  }) => Promise<boolean> | boolean;
 }
 
 const DAYS: DayKey[] = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
@@ -165,7 +165,7 @@ export default function AddVenueModal({ open, onClose, onAdd, initial, onEdit }:
       const masterHH = hh[0];
       const mStart = masterHH?.startTime || "";
       const mEnd = masterHH?.endTime || "";
-      const mDeals = Array.isArray(masterHH?.deals) ? masterHH.deals.map((d: any) => ({ id: uid('deal'), category: 'Beer' as DealCategory, description: String(d) })) : [];
+      const mDeals: Deal[] = Array.isArray(masterHH?.deals) ? masterHH.deals.map((d: any) => ({ id: uid('deal'), category: 'Beer' as DealCategory, description: String(d) })) : [];
 
       // Mark selected days and set overrides where entries differ from master
       for (const entry of hh) {
@@ -176,9 +176,9 @@ export default function AddVenueModal({ open, onClose, onAdd, initial, onEdit }:
             sel[dayKey as DayKey] = true;
             const start = entry.startTime || mStart;
             const end = entry.endTime || mEnd;
-            const deals = Array.isArray(entry.deals) ? entry.deals.map((x: any) => ({ id: uid('deal'), category: 'Beer' as DealCategory, description: String(x) })) : [];
+            const deals: Deal[] = Array.isArray(entry.deals) ? entry.deals.map((x: any) => ({ id: uid('deal'), category: 'Beer' as DealCategory, description: String(x) })) : [];
             // If matches master, keep inherit, otherwise override
-            if (start === mStart && end === mEnd && JSON.stringify((deals || []).map(d=>d.description)) === JSON.stringify(mDeals.map(d=>d.description))) {
+            if (start === mStart && end === mEnd && JSON.stringify((deals || []).map((d: Deal) => d.description)) === JSON.stringify(mDeals.map((d: Deal) => d.description))) {
               // inherit
             } else {
               weekly[dayKey as DayKey] = { mode: 'override', start, end, deals };
